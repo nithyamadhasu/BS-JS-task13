@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #train {
+            width: 100px;
+            height: 50px;
+            position: relative;
+            animation-name: move;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes move {
+            0% { left: 0px; }
+            100% { left: calc(100% - 100px); }
+        }
+    </style>
+</head>
+<body>
+    <div id="train"><img src = "train-motion.avif"/></div>
+    <button onclick="startAnimation()">Start</button>
+    <button onclick="stopAnimation()">Stop</button>
+
+    <script>
+        var train = document.getElementById('train');
+
+        function startAnimation() {
+            train.style.animationPlayState = 'running';
+        }
+
+        function stopAnimation() {
+            train.style.animationPlayState = 'paused';
+        }
+    </script>
+</body>
+</html>
